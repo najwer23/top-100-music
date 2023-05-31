@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useRecoilState } from "recoil"
 import { musicListTopFiltredSelector } from "../state/selectors"
 
-const MusicTop100:FC = () => {
+const MusicTop:FC = () => {
 	const [musicFilterd, setMusicFiltred] = useRecoilState(musicListTopFiltredSelector);
 
   return (
@@ -11,4 +11,4 @@ const MusicTop100:FC = () => {
 
 }
 
-export default MusicTop100;
+export default MusicTop;
