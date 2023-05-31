@@ -1,10 +1,12 @@
-import React from 'react';
-
+import MusicTop from "./components/MusicTop";
+import { Suspense } from 'react';
 
 function App() {
 
   return <>
-			hello
+		<Suspense fallback={<div>Loading...</div>}>
+			<MusicTop />
+		</Suspense>
 	</>
 }
 
