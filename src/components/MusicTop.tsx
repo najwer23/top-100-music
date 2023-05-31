@@ -1,12 +1,38 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { useRecoilState } from "recoil"
-import { musicListTopFiltredSelector } from "../state/selectors"
+import { musicListTopFilteredSelector } from "../state/selectors"
+import Input from "./inputs/search";
+import MusicList from "./MusicList"
 
 const MusicTop:FC = () => {
-	const [musicFilterd, setMusicFiltred] = useRecoilState(musicListTopFiltredSelector);
+	const [musicFiltered, setMusicFiltred] = useRecoilState(musicListTopFilteredSelector);
+	const musicFilteredId = useRef<HTMLInputElement>(null)
+
+	function updateMusicFiltered() {
+		let value = musicFilteredId.current!.value;
+
+		if (value !== '') {
+			value = value.toLocaleLowerCase();
+		}
+
+		setMusicFiltred(value)
+	}
 
   return (
-		<>aahajh</>
+		<>
+			<Input
+					innerRef={musicFilteredId}
+					id={"music-top-search"}
+					label={"Search"}
+					type="search"
+					onKeyUp={updateMusicFiltered}
+					onBlur={updateMusicFiltered}
+				/>
+
+
+			<MusicList albums={musicFiltered} />
+
+		</>
   )
 
 }

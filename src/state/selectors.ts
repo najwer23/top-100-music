@@ -15,8 +15,8 @@ export const fetchMusicListTopSelctor = selector({
   },
 })
 
-export const musicListTopFiltredSelector = selector({
-  key: 'MusicListTopFiltredSelector',
+export const musicListTopFilteredSelector = selector({
+  key: 'MusicListTopFilteredSelector',
   get: ({get}) => {
 		let arrMusicListTop = get(fetchMusicListTopSelctor);
 		let currentMusicListTopSearchValue = get(musicListTopSearchValue)
@@ -25,14 +25,14 @@ export const musicListTopFiltredSelector = selector({
 			return arrMusicListTop
 		}
 
-		let filtred = arrMusicListTop.filter((item:any) => {
+		let filtered = arrMusicListTop.filter((item:any) => {
 			return (
 				item["im:artist"].label.includes(currentMusicListTopSearchValue) ||
 				item["im:name"].label.includes(currentMusicListTopSearchValue)
 			)
 		})
 
-		return filtred;
+		return filtered;
 	},
 	set: ({set}, newValue) => {
 		set(musicListTopSearchValue, (newValue))

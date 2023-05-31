@@ -7,5 +7,5 @@ export const musicListTopUrl = atom({
 
 export const musicListTopSearchValue = atom({
   key: "MusicListTopSearchValue",
-  default: "Tina Turner"
+  default: null
 })
