@@ -15,7 +15,10 @@ const MusicTop:FC = () => {
 			value = value.toLowerCase();
 		}
 
-		setMusicFiltred(value)
+		setMusicFiltred({
+			...musicFiltered,
+			searchValue: value
+		});
 	}
 
   return (
@@ -31,7 +34,7 @@ const MusicTop:FC = () => {
 					onBlur={updateMusicFiltered}
 				/>
 
-			<MusicList albums={musicFiltered} />
+			<MusicList albums={musicFiltered.filteredList} />
 		</div>
   )
 

@@ -1,4 +1,5 @@
 import { atom } from "recoil"
+import { Album } from "../types"
 
 export const musicListTopUrl = atom({
   key: "MusicListTopUrl",
@@ -7,5 +8,8 @@ export const musicListTopUrl = atom({
 
 export const musicListTopSearchValue = atom({
   key: "MusicListTopSearchValue",
-  default: null
+  default: {
+		searchValue: "" as string,
+		filteredList: [] as Album[],
+	}
 })
