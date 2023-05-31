@@ -1,11 +1,8 @@
 export interface Album {
   ["im:name"]: Label;
-  ["im:image"]?: Label[];
+  ["im:image"]: Label[];
   ["im:itemCount"]: Label;
-  ["im:price"]: {
-		attributes?: Attributes;
-		label?: Label;
-	};
+  ["im:price"]: Attributes & Label;
   ["im:contentType"]: {
 		attributes?: Attributes;
 		["im:contentType"]?: Attributes;
@@ -17,10 +14,7 @@ export interface Album {
 		attributes?: Attributes;
 		label?: Label;
 	};
-  ["im:artist"]: {
-		attributes?: Attributes;
-		label: Label;
-	};
+  ["im:artist"]: Attributes & Label;
   category: {
 		attributes?: Attributes;
 	};

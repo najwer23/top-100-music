@@ -8,7 +8,7 @@ const MusicTop:FC = () => {
 	const [musicFiltered, setMusicFiltred] = useRecoilState(musicListTopFilteredSelector);
 	const musicFilteredId = useRef<HTMLInputElement>(null)
 
-	function updateMusicFiltered() {
+	function updateMusicFiltered(): void {
 		let value = musicFilteredId.current!.value;
 
 		if (value !== '') {
