@@ -1,7 +1,7 @@
 import { selector } from "recoil"
 import { musicListTopUrl, musicListTopSearchValue } from "./atoms"
 
-export const fetchMusicListTop100Selctor = selector({
+export const fetchMusicListTopSelctor = selector({
   key: "FetchMusicListTopSelctor",
   get: async ({ get }) => {
     try {
@@ -18,17 +18,17 @@ export const fetchMusicListTop100Selctor = selector({
 export const musicListTopFiltredSelector = selector({
   key: 'MusicListTopFiltredSelector',
   get: ({get}) => {
-		let arrMusicListTop = get(fetchMusicListTop100Selctor);
+		let arrMusicListTop = get(fetchMusicListTopSelctor);
 		let currentMusicListTopSearchValue = get(musicListTopSearchValue)
 
 		if (currentMusicListTopSearchValue === null) {
 			return arrMusicListTop
 		}
 
-		let filtred = arrMusicListTop.filter((x:any) => {
+		let filtred = arrMusicListTop.filter((item:any) => {
 			return (
-				x["im:artist"].label.includes(currentMusicListTopSearchValue) ||
-				x["im:name"].label.includes(currentMusicListTopSearchValue)
+				item["im:artist"].label.includes(currentMusicListTopSearchValue) ||
+				item["im:name"].label.includes(currentMusicListTopSearchValue)
 			)
 		})
 
