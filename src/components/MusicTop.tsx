@@ -20,6 +20,8 @@ const MusicTop:FC = () => {
 
   return (
 		<div className="mx-10 my-10">
+			<h1 className="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Top hits</h1>
+
 			<Input
 					innerRef={musicFilteredId}
 					id={"music-top-search"}
