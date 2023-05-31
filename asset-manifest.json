@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/top-100-music/static/css/main.92014f0c.css",
+    "main.js": "/top-100-music/static/js/main.a847dee7.js",
+    "index.html": "/top-100-music/index.html",
+    "main.92014f0c.css.map": "/top-100-music/static/css/main.92014f0c.css.map",
+    "main.a847dee7.js.map": "/top-100-music/static/js/main.a847dee7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92014f0c.css",
+    "static/js/main.a847dee7.js"
+  ]
+}
