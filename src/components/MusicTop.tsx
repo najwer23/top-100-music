@@ -12,14 +12,14 @@ const MusicTop:FC = () => {
 		let value = musicFilteredId.current!.value;
 
 		if (value !== '') {
-			value = value.toLocaleLowerCase();
+			value = value.toLowerCase();
 		}
 
 		setMusicFiltred(value)
 	}
 
   return (
-		<>
+		<div className="mx-10 my-10">
 			<Input
 					innerRef={musicFilteredId}
 					id={"music-top-search"}
@@ -29,10 +29,8 @@ const MusicTop:FC = () => {
 					onBlur={updateMusicFiltered}
 				/>
 
-
 			<MusicList albums={musicFiltered} />
-
-		</>
+		</div>
   )
 
 }

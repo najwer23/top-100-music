@@ -8,7 +8,15 @@ export const fetchMusicListTopSelctor = selector({
       const url = get(musicListTopUrl)
       const response = await fetch(url)
       const data = await response.json()
-			return data?.feed?.entry;
+
+			let albums = data?.feed?.entry;
+
+			//workaround for missing position in chart
+			for (let i=0; i<albums.length; i++) {
+				albums[i]["customId"] = i+1
+			}
+
+			return albums
     } catch (error) {
       throw error
     }
@@ -27,8 +35,8 @@ export const musicListTopFilteredSelector = selector({
 
 		let filtered = arrMusicListTop.filter((item:any) => {
 			return (
-				item["im:artist"].label.includes(currentMusicListTopSearchValue) ||
-				item["im:name"].label.includes(currentMusicListTopSearchValue)
+				item["im:artist"].label.toLowerCase().includes(currentMusicListTopSearchValue) ||
+				item["im:name"].label.toLowerCase().includes(currentMusicListTopSearchValue)
 			)
 		})
 
