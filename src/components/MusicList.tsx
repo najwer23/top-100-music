@@ -21,8 +21,8 @@ const MusicList:FC<MusicListProps> = ({albums}) => {
 									<div className="flex flex-row gap-x-5 my-2">
 										<div className="flex-shrink-0"><img src={item["im:image"][0].label} /></div>
 										<div>
-											<h2 className="text-lg font-semibold text-blue-600 dark:text-white">{item["im:name"].label} </h2>
-											<h3 className="text-lg font-semibold text-gray-900 dark:text-white"><i>{item["im:artist"].label}</i></h3>
+											<h2 className="text-lg font-semibold text-blue-600">{item["im:name"].label} </h2>
+											<h3 className="text-lg font-semibold text-gray-900"><i>{item["im:artist"].label}</i></h3>
 											<p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{item["im:price"].label}</p>
 										</div>
 									</div>
